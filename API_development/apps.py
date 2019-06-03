@@ -5,7 +5,7 @@ from quotes import funny_quotes
 
 app = Flask(__name__)
 
-@app.route("/api/randquo")
+@app.route("/")
 def random_run_method():
     quotes = funny_quotes()
     length = len(quotes)
