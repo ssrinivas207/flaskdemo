@@ -37,4 +37,16 @@ class Candidate:
         self.__experience=value
     
     @property
+    def id(self):
+        return self.__id
     
+    def serialize(self):
+        return {
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "id": self.id,
+            "experience": [exp.serialize() for exp in self.experience]
+        }
+
+    def add_experience(self, experience):
+        self.experience.append(experience)
